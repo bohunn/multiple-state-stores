@@ -13,7 +13,7 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, TypedEntity {
   private static final long serialVersionUID = -7793891622861610026L;
 
 
@@ -436,6 +436,11 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
     } else {
       return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder(other);
     }
+  }
+
+  @Override
+  public Class<?> ofType() {
+    return JoinedPersonAddrV2.class;
   }
 
   /**

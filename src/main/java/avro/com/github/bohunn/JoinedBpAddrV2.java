@@ -5,6 +5,7 @@
  */
 package avro.com.github.bohunn;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -505,6 +506,11 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
     } else {
       return new avro.com.github.bohunn.JoinedBpAddrV2.Builder(other);
     }
+  }
+
+  @Override
+  public Class<?> ofType() {
+    return JoinedBpAddrV2.class;
   }
 
   /**

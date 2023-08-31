@@ -35,6 +35,7 @@ dependencies {
     implementation group: 'io.confluent', name: "kafka-avro-serializer", version: "7.3.0"
     implementation group: 'org.apache.kafka', name: "kafka-streams", version: "3.5.1"
     implementation group: 'org.apache.avro', name: "avro", version: "1.11.1"
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
