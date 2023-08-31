@@ -5,12 +5,17 @@
  */
 package avro.com.github.bohunn;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
+
+import jakarta.xml.bind.DatatypeConverter;
+import java.io.IOException;
+import org.springframework.util.DigestUtils;
 
 @org.apache.avro.specific.AvroGenerated
 public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, Hashable {
@@ -152,6 +157,57 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     this.isVip = isVip;
     this.isBoeko = isBoeko;
     this.hash = hash;
+  }
+
+    /**
+   * Constructor with automatic hash calc
+   * @param eventObjType event object type
+   * @param bpObjId obj_bp id
+   * @param mainAddrId main address id
+   * @param mainAddress main address full text
+   * @param bpName business partner name
+   * @param bpNr business partner key id 11
+   * @param bpCloseDate The new value for bpCloseDate
+   * @param personName person obj id
+   * @param personNr person key
+   * @param personCloseDate The new value for personCloseDate
+   * @param narilo The new value for narilo
+   * @param legalHold The new value for legalHold
+   * @param isMa The new value for isMa
+   * @param domiAddrId domicile address
+   * @param domiAddress domicile address full text
+   * @param banklagernd The new value for banklagernd
+   * @param isVip The new value for isVip
+   * @param isBoeko The new value for isBoeko
+   */
+  public ObjectUpdateEvent(avro.com.github.bohunn.EventObjType eventObjType, java.lang.Long bpObjId, java.lang.Long mainAddrId, java.lang.String mainAddress, java.lang.String bpName, java.lang.String bpNr, java.lang.String bpCloseDate, java.lang.String personName, java.lang.String personNr, java.lang.String personCloseDate, java.lang.String narilo, java.lang.String legalHold, java.lang.String isMa, java.lang.Long domiAddrId, java.lang.String domiAddress, java.lang.String banklagernd, java.lang.String isVip, java.lang.String isBoeko) {
+    this.eventObjType = eventObjType;
+    this.bpObjId = bpObjId;
+    this.mainAddrId = mainAddrId;
+    this.mainAddress = mainAddress;
+    this.bpName = bpName;
+    this.bpNr = bpNr;
+    this.bpCloseDate = bpCloseDate;
+    this.personName = personName;
+    this.personNr = personNr;
+    this.personCloseDate = personCloseDate;
+    this.narilo = narilo;
+    this.legalHold = legalHold;
+    this.isMa = isMa;
+    this.domiAddrId = domiAddrId;
+    this.domiAddress = domiAddress;
+    this.banklagernd = banklagernd;
+    this.isVip = isVip;
+    this.isBoeko = isBoeko;
+    this.hash = "dummy";
+    try {
+      byte[] md5Digest = DigestUtils.md5Digest(getEncoder().encode(this).array());
+      this.hash = DatatypeConverter.printHexBinary(md5Digest);
+    } catch (JsonProcessingException var18) {
+      throw new RuntimeException(var18);
+    } catch (IOException var19) {
+      throw new IllegalStateException(var19);
+    }
   }
 
   @Override

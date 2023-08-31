@@ -5,12 +5,17 @@
  */
 package avro.com.github.bohunn;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
+
+import jakarta.xml.bind.DatatypeConverter;
+import java.io.IOException;
+import org.springframework.util.DigestUtils;
 
 @org.apache.avro.specific.AvroGenerated
 public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, TypedEntity {
@@ -128,6 +133,45 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
     this.force = force;
     this.isEmittent = isEmittent;
     this.hash = hash;
+  }
+
+    /**
+   * Constructor with automatic hash value calc
+   * @param objPersonId obj person id
+   * @param objAddrId obj addr id
+   * @param personName The new value for personName
+   * @param personNr obj_person key id 807
+   * @param domiAddrId The new value for domiAddrId
+   * @param narilo The new value for narilo
+   * @param isBoeko The new value for isBoeko
+   * @param legalHold The new value for legalHold
+   * @param addrFull The new value for addrFull
+   * @param closeDate The new value for closeDate
+   * @param force technical field to force onbase synchronization
+   * @param isEmittent The new value for isEmittent
+   */
+  public JoinedPersonAddrV2(java.lang.Long objPersonId, java.lang.Long objAddrId, java.lang.String personName, java.lang.String personNr, java.lang.Long domiAddrId, java.lang.Boolean narilo, java.lang.Boolean isBoeko, java.lang.Boolean legalHold, java.lang.String addrFull, java.lang.String closeDate, java.lang.Integer force, java.lang.Boolean isEmittent) {
+    this.objPersonId = objPersonId;
+    this.objAddrId = objAddrId;
+    this.personName = personName;
+    this.personNr = personNr;
+    this.domiAddrId = domiAddrId;
+    this.narilo = narilo;
+    this.isBoeko = isBoeko;
+    this.legalHold = legalHold;
+    this.addrFull = addrFull;
+    this.closeDate = closeDate;
+    this.force = force;
+    this.isEmittent = isEmittent;
+    this.hash = "dummy";
+    try {
+      byte[] md5Digest = DigestUtils.md5Digest(getEncoder().encode(this).array());
+      this.hash = DatatypeConverter.printHexBinary(md5Digest);
+    } catch (JsonProcessingException var18) {
+      throw new RuntimeException(var18);
+    } catch (IOException var19) {
+      throw new IllegalStateException(var19);
+    }
   }
 
   @Override
