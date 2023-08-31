@@ -1,6 +1,6 @@
 {
   "name": "AddrShort",
-  "namespace": "avro.ch.tkb.bde",
+  "namespace": "avro.com.github.bohunn",
   "type": "record",
   "fields": [
     {

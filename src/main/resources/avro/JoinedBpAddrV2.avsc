@@ -55,7 +55,7 @@
       "doc": "Bp-Person relation list",
       "type": ["null", {
         "type": "array",
-        "items": ["null", "avro.ch.tkb.bde.RelationItem"],
+        "items": ["null", "avro.com.github.bohunn.RelationItem"],
         "default": "null"
       }]
     },

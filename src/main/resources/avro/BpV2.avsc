@@ -1,6 +1,6 @@
 {
     "name": "BpV2",
-    "namespace": "avro.ch.tkb.bde",
+    "namespace": "avro.com.github.bohunn",
     "type": "record",
     "fields": [
       {
@@ -56,7 +56,7 @@
         "doc": "Bp - Person relation list",
         "type": ["null", {
           "type": "array",
-          "items": ["null", "avro.ch.tkb.bde.RelationItem"],
+          "items": ["null", "avro.com.github.bohunn.RelationItem"],
           "default": "null"
         }]
       },

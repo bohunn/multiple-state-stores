@@ -1,0 +1,33 @@
+{
+    "name": "RelationItem",
+    "namespace": "avro.com.github.bohunn",
+    "type": "record",
+    "fields": [
+      {
+        "name": "relationType",
+        "doc": "Relation Type",
+        "type": {
+          "name": "RelationType",
+          "type": "enum",
+          "doc": "RO - Registered Owner, AO - Account Owner, IO - Issuer",
+          "symbols": ["RO","AO","IO"],
+          "default": "AO"
+        }
+      },
+      {
+        "name": "personObjId",
+        "doc": "obj_person id of a related person",
+        "type": "long"
+      },
+      {
+        "name": "validFrom",
+        "doc": "relation valid from date",
+        "type": "string"
+      },
+      {
+        "name": "validTo",
+        "doc": "relation valid to date",
+        "type": "string"
+      }
+    ]
+  }
