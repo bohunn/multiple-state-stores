@@ -1,0 +1,98 @@
+{
+  "name": "ObjectUpdateEvent",
+  "namespace": "avro.com.github.bohunn",
+  "type": "record",
+  "fields": [
+    {
+      "name": "eventObjType",
+      "doc": "event object type",
+      "type": {
+        "name": "EventObjType",
+        "type": "enum",
+        "symbols": ["FULL", "PERSON_ONLY", "BP_ONLY"],
+        "default": "FULL"
+      }
+    },
+    {
+      "name": "bpObjId",
+      "doc": "obj_bp id",
+      "type": ["null","long"]
+    },
+    {
+      "name": "mainAddrId",
+      "doc": "main address id",
+      "type": ["null","long"]
+    },
+    {
+      "name": "mainAddress",
+      "doc": "main address full text",
+      "type": ["null","string"]
+    },
+    {
+      "name": "bpName",
+      "doc": "business partner name",
+      "type": ["null","string"]
+    },
+    {
+      "name": "bpNr",
+      "doc": "business partner key id 11",
+      "type": ["null","string"]
+    },
+    {
+      "name": "bpCloseDate",
+      "type": ["null","string"]
+    },
+    {
+      "name": "personName",
+      "doc": "person obj id",
+      "type": "string"
+    },
+    {
+      "name": "personNr",
+      "doc": "person key",
+      "type": "string"
+    },
+    {
+      "name": "personCloseDate",
+      "type": ["null","string"]
+    },
+    {
+      "name": "narilo",
+      "type": ["null","string"]
+    },
+    {
+      "name": "legalHold",
+      "type": "string"
+    },
+    {
+      "name": "isMa",
+      "type": ["null","string"]
+    },
+    {
+      "name": "domiAddrId",
+      "doc": "domicile address",
+      "type": "long"
+    },
+    {
+      "name": "domiAddress",
+      "doc": "domicile address full text",
+      "type": "string"
+    },
+    {
+      "name": "banklagernd",
+      "type": ["null","string"]
+    },
+    {
+      "name": "isVip",
+      "type": ["null","string"]
+    },
+    {
+      "name": "isBoeko",
+      "type": ["null","string"]
+    },
+    {
+      "name": "hash",
+      "type": "string"
+    }
+  ]
+}

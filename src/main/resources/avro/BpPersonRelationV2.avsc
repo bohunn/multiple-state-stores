@@ -1,0 +1,41 @@
+{
+  "name": "BpPersonRelationV2",
+  "namespace": "avro.ch.tkb.bde",
+  "type": "record",
+  "fields": [
+    {
+      "name": "personObjId",
+      "doc": "obj_person id",
+      "type": "long"
+    },
+    {
+      "name": "bpObjId",
+      "doc": "obj_bp_id",
+      "type": "long"
+    },
+    {
+      "name": "personNummer",
+      "doc": "Person Nummer",
+      "type": "string"
+    },
+    {
+      "name": "bpNummer",
+      "doc": "BP Nummer RO",
+      "type": "string"
+    },
+    {
+      "name": "validFrom",
+      "doc": "relation valid from date",
+      "type": "string"
+    },
+    {
+      "name": "validTo",
+      "doc": "relation valid to date",
+      "type": "string"
+    },
+    {
+      "name": "hash",
+      "type": "string"
+    }
+  ]
+}

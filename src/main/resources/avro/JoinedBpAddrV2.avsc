@@ -1,0 +1,72 @@
+{
+  "name": "JoinedBpAddrV2",
+  "namespace": "avro.com.github.bohunn",
+  "type": "record",
+  "fields": [
+    {
+      "name": "bpObjId",
+      "doc": "obj_bp id",
+      "type": "long"
+    },
+    {
+      "name": "bpName",
+      "type": "string"
+    },
+    {
+      "name": "bpNr",
+      "doc": "obj_bp key id 11",
+      "type": "string"
+    },
+    {
+      "name": "closeDate",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "isMa",
+      "type": "boolean"
+    },
+    {
+      "name": "isVip",
+      "type": "boolean"
+    },
+    {
+      "name": "isBanklagernd",
+      "type": "boolean"
+    },
+    {
+      "name": "domiAddrId",
+      "doc": "Domicil Address object id",
+      "type": "long"
+    },
+    {
+      "name" : "mainAddrId",
+      "type": "long"
+    },
+    {
+      "name": "mainAddresse",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "isJoint",
+      "type": "boolean"
+    },
+    {
+      "name": "relationList",
+      "doc": "Bp-Person relation list",
+      "type": ["null", {
+        "type": "array",
+        "items": ["null", "avro.ch.tkb.bde.RelationItem"],
+        "default": "null"
+      }]
+    },
+    {
+      "name": "force",
+      "doc": "technical field to force onbase synchronization",
+      "type": "int"
+    },
+    {
+      "name": "hash",
+      "type": "string"
+    }
+  ]
+}

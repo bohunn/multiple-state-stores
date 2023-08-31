@@ -1,0 +1,15 @@
+{
+  "name": "AddrShort",
+  "namespace": "avro.ch.tkb.bde",
+  "type": "record",
+  "fields": [
+    {
+      "name": "objId",
+      "type": "long"
+    },
+    {
+      "name": "addrFull",
+      "type": "string"
+    }
+  ]
+}

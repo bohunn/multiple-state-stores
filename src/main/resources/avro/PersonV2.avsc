@@ -1,0 +1,51 @@
+{
+    "name": "PersonV2",
+    "namespace": "avro.ch.tkb.bde",
+    "type": "record",
+    "fields": [
+      {
+        "name": "objId",
+        "doc": "obj_person id",
+        "type": "long"
+      },
+      {
+        "name": "personName",
+        "type": "string"
+      },
+      {
+        "name": "personNr",
+        "doc": "obj_person key id 807",
+        "type": "string"
+      },
+      {
+        "name": "domiAddrId",
+        "type": "long"
+      },
+      {
+        "name": "narilo",
+        "type": "boolean"
+      },
+      {
+        "name": "isBoeko",
+        "type": "boolean"
+      },
+      {
+        "name": "legalHold",
+        "type": "boolean"
+      },
+      {
+        "name": "closeDate",
+        "type": ["null", "string"]
+      },
+      {
+        "name": "isEmittent",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "force",
+        "doc": "technical field to force onbase synchronization",
+        "type": "int"
+      }
+    ]
+  }

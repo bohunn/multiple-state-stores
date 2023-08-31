@@ -1,0 +1,64 @@
+{
+  "name": "JoinedPersonAddrV2",
+  "namespace": "avro.com.github.bohunn",
+  "type": "record",
+  "fields": [
+    {
+      "name": "objPersonId",
+      "doc": "obj person id",
+      "type": "long"
+    },
+    {
+      "name": "objAddrId",
+      "doc": "obj addr id",
+      "type": "long"
+    },
+    {
+      "name": "personName",
+      "type": "string"
+    },
+    {
+      "name": "personNr",
+      "doc": "obj_person key id 807",
+      "type": "string"
+    },
+    {
+      "name": "domiAddrId",
+      "type": "long"
+    },
+    {
+      "name": "narilo",
+      "type": "boolean"
+    },
+    {
+      "name": "isBoeko",
+      "type": "boolean"
+    },
+    {
+      "name": "legalHold",
+      "type": "boolean"
+    },
+    {
+      "name": "addrFull",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "closeDate",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "force",
+      "doc": "technical field to force onbase synchronization",
+      "type": "int"
+    },
+    {
+      "name": "isEmittent",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "hash",
+      "type": "string"
+    }
+  ]
+}
