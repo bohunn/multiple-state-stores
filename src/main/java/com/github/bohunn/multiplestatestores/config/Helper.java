@@ -1,6 +1,6 @@
 package com.github.bohunn.multiplestatestores.config;
 
-import avro.com.github.bohunn.*;
+import avro.ch.tkb.bde.*;
 
 import java.util.Objects;
 import java.util.stream.Collector;

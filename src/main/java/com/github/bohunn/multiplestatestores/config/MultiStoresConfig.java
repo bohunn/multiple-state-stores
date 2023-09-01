@@ -1,8 +1,8 @@
 package com.github.bohunn.multiplestatestores.config;
 
-import avro.com.github.bohunn.JoinedBpAddrV2;
-import avro.com.github.bohunn.JoinedPersonAddrV2;
-import avro.com.github.bohunn.ObjectUpdateEvent;
+import avro.ch.tkb.bde.JoinedBpAddrV2;
+import avro.ch.tkb.bde.JoinedPersonAddrV2;
+import avro.ch.tkb.bde.ObjectUpdateEvent;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
 import org.apache.kafka.common.config.SslConfigs;

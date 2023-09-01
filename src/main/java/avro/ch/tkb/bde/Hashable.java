@@ -1,4 +1,4 @@
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 
 public interface Hashable {
     String getHash();

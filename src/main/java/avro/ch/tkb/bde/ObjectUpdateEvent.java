@@ -3,26 +3,24 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.avro.generic.GenericArray;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
-import org.apache.avro.message.BinaryMessageDecoder;
-import org.apache.avro.message.SchemaStore;
-
 import jakarta.xml.bind.DatatypeConverter;
-import java.io.IOException;
+import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
+import org.apache.avro.message.SchemaStore;
+import org.apache.avro.specific.SpecificData;
 import org.springframework.util.DigestUtils;
+
+import java.io.IOException;
 
 @org.apache.avro.specific.AvroGenerated
 public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, Hashable {
-  private static final long serialVersionUID = -6648109467003805800L;
+  private static final long serialVersionUID = 7963533572665388168L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ObjectUpdateEvent\",\"namespace\":\"avro.com.github.bohunn\",\"fields\":[{\"name\":\"eventObjType\",\"type\":{\"type\":\"enum\",\"name\":\"EventObjType\",\"symbols\":[\"FULL\",\"PERSON_ONLY\",\"BP_ONLY\"],\"default\":\"FULL\"},\"doc\":\"event object type\"},{\"name\":\"bpObjId\",\"type\":[\"null\",\"long\"],\"doc\":\"obj_bp id\"},{\"name\":\"mainAddrId\",\"type\":[\"null\",\"long\"],\"doc\":\"main address id\"},{\"name\":\"mainAddress\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"main address full text\"},{\"name\":\"bpName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"business partner name\"},{\"name\":\"bpNr\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"business partner key id 11\"},{\"name\":\"bpCloseDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"personName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"person obj id\"},{\"name\":\"personNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"person key\"},{\"name\":\"personCloseDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"narilo\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"legalHold\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"isMa\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"domiAddrId\",\"type\":\"long\",\"doc\":\"domicile address\"},{\"name\":\"domiAddress\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"domicile address full text\"},{\"name\":\"banklagernd\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isVip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isBoeko\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ObjectUpdateEvent\",\"namespace\":\"avro.ch.tkb.bde\",\"fields\":[{\"name\":\"eventObjType\",\"type\":{\"type\":\"enum\",\"name\":\"EventObjType\",\"symbols\":[\"FULL\",\"PERSON_ONLY\",\"BP_ONLY\"],\"default\":\"FULL\"},\"doc\":\"event object type\"},{\"name\":\"bpObjId\",\"type\":[\"null\",\"long\"],\"doc\":\"obj_bp id\"},{\"name\":\"mainAddrId\",\"type\":[\"null\",\"long\"],\"doc\":\"main address id\"},{\"name\":\"mainAddress\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"main address full text\"},{\"name\":\"bpName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"business partner name\"},{\"name\":\"bpNr\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"business partner key id 11\"},{\"name\":\"bpCloseDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"personName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"person obj id\"},{\"name\":\"personNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"person key\"},{\"name\":\"personCloseDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"narilo\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"legalHold\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"isMa\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"domiAddrId\",\"type\":\"long\",\"doc\":\"domicile address\"},{\"name\":\"domiAddress\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"domicile address full text\"},{\"name\":\"banklagernd\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isVip\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isBoeko\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -79,7 +77,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /** event object type */
-  private avro.com.github.bohunn.EventObjType eventObjType;
+  private avro.ch.tkb.bde.EventObjType eventObjType;
   /** obj_bp id */
   private java.lang.Long bpObjId;
   /** main address id */
@@ -137,7 +135,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param isBoeko The new value for isBoeko
    * @param hash The new value for hash
    */
-  public ObjectUpdateEvent(avro.com.github.bohunn.EventObjType eventObjType, java.lang.Long bpObjId, java.lang.Long mainAddrId, java.lang.String mainAddress, java.lang.String bpName, java.lang.String bpNr, java.lang.String bpCloseDate, java.lang.String personName, java.lang.String personNr, java.lang.String personCloseDate, java.lang.String narilo, java.lang.String legalHold, java.lang.String isMa, java.lang.Long domiAddrId, java.lang.String domiAddress, java.lang.String banklagernd, java.lang.String isVip, java.lang.String isBoeko, java.lang.String hash) {
+  public ObjectUpdateEvent(avro.ch.tkb.bde.EventObjType eventObjType, java.lang.Long bpObjId, java.lang.Long mainAddrId, java.lang.String mainAddress, java.lang.String bpName, java.lang.String bpNr, java.lang.String bpCloseDate, java.lang.String personName, java.lang.String personNr, java.lang.String personCloseDate, java.lang.String narilo, java.lang.String legalHold, java.lang.String isMa, java.lang.Long domiAddrId, java.lang.String domiAddress, java.lang.String banklagernd, java.lang.String isVip, java.lang.String isBoeko, java.lang.String hash) {
     this.eventObjType = eventObjType;
     this.bpObjId = bpObjId;
     this.mainAddrId = mainAddrId;
@@ -159,7 +157,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     this.hash = hash;
   }
 
-    /**
+  /**
    * Constructor with automatic hash calc
    * @param eventObjType event object type
    * @param bpObjId obj_bp id
@@ -180,7 +178,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param isVip The new value for isVip
    * @param isBoeko The new value for isBoeko
    */
-  public ObjectUpdateEvent(avro.com.github.bohunn.EventObjType eventObjType, java.lang.Long bpObjId, java.lang.Long mainAddrId, java.lang.String mainAddress, java.lang.String bpName, java.lang.String bpNr, java.lang.String bpCloseDate, java.lang.String personName, java.lang.String personNr, java.lang.String personCloseDate, java.lang.String narilo, java.lang.String legalHold, java.lang.String isMa, java.lang.Long domiAddrId, java.lang.String domiAddress, java.lang.String banklagernd, java.lang.String isVip, java.lang.String isBoeko) {
+  public ObjectUpdateEvent(avro.ch.tkb.bde.EventObjType eventObjType, java.lang.Long bpObjId, java.lang.Long mainAddrId, java.lang.String mainAddress, java.lang.String bpName, java.lang.String bpNr, java.lang.String bpCloseDate, java.lang.String personName, java.lang.String personNr, java.lang.String personCloseDate, java.lang.String narilo, java.lang.String legalHold, java.lang.String isMa, java.lang.Long domiAddrId, java.lang.String domiAddress, java.lang.String banklagernd, java.lang.String isVip, java.lang.String isBoeko) {
     this.eventObjType = eventObjType;
     this.bpObjId = bpObjId;
     this.mainAddrId = mainAddrId;
@@ -248,7 +246,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: eventObjType = (avro.com.github.bohunn.EventObjType)value$; break;
+    case 0: eventObjType = (avro.ch.tkb.bde.EventObjType)value$; break;
     case 1: bpObjId = (java.lang.Long)value$; break;
     case 2: mainAddrId = (java.lang.Long)value$; break;
     case 3: mainAddress = value$ != null ? value$.toString() : null; break;
@@ -275,7 +273,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'eventObjType' field.
    * @return event object type
    */
-  public avro.com.github.bohunn.EventObjType getEventObjType() {
+  public avro.ch.tkb.bde.EventObjType getEventObjType() {
     return eventObjType;
   }
 
@@ -285,7 +283,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * event object type
    * @param value the value to set.
    */
-  public void setEventObjType(avro.com.github.bohunn.EventObjType value) {
+  public void setEventObjType(avro.ch.tkb.bde.EventObjType value) {
     this.eventObjType = value;
   }
 
@@ -608,8 +606,8 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Creates a new ObjectUpdateEvent RecordBuilder.
    * @return A new ObjectUpdateEvent RecordBuilder
    */
-  public static avro.com.github.bohunn.ObjectUpdateEvent.Builder newBuilder() {
-    return new avro.com.github.bohunn.ObjectUpdateEvent.Builder();
+  public static avro.ch.tkb.bde.ObjectUpdateEvent.Builder newBuilder() {
+    return new avro.ch.tkb.bde.ObjectUpdateEvent.Builder();
   }
 
   /**
@@ -617,11 +615,11 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing builder to copy.
    * @return A new ObjectUpdateEvent RecordBuilder
    */
-  public static avro.com.github.bohunn.ObjectUpdateEvent.Builder newBuilder(avro.com.github.bohunn.ObjectUpdateEvent.Builder other) {
+  public static avro.ch.tkb.bde.ObjectUpdateEvent.Builder newBuilder(avro.ch.tkb.bde.ObjectUpdateEvent.Builder other) {
     if (other == null) {
-      return new avro.com.github.bohunn.ObjectUpdateEvent.Builder();
+      return new avro.ch.tkb.bde.ObjectUpdateEvent.Builder();
     } else {
-      return new avro.com.github.bohunn.ObjectUpdateEvent.Builder(other);
+      return new avro.ch.tkb.bde.ObjectUpdateEvent.Builder(other);
     }
   }
 
@@ -630,11 +628,11 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing instance to copy.
    * @return A new ObjectUpdateEvent RecordBuilder
    */
-  public static avro.com.github.bohunn.ObjectUpdateEvent.Builder newBuilder(avro.com.github.bohunn.ObjectUpdateEvent other) {
+  public static avro.ch.tkb.bde.ObjectUpdateEvent.Builder newBuilder(avro.ch.tkb.bde.ObjectUpdateEvent other) {
     if (other == null) {
-      return new avro.com.github.bohunn.ObjectUpdateEvent.Builder();
+      return new avro.ch.tkb.bde.ObjectUpdateEvent.Builder();
     } else {
-      return new avro.com.github.bohunn.ObjectUpdateEvent.Builder(other);
+      return new avro.ch.tkb.bde.ObjectUpdateEvent.Builder(other);
     }
   }
 
@@ -646,7 +644,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     implements org.apache.avro.data.RecordBuilder<ObjectUpdateEvent> {
 
     /** event object type */
-    private avro.com.github.bohunn.EventObjType eventObjType;
+    private avro.ch.tkb.bde.EventObjType eventObjType;
     /** obj_bp id */
     private java.lang.Long bpObjId;
     /** main address id */
@@ -684,7 +682,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(avro.com.github.bohunn.ObjectUpdateEvent.Builder other) {
+    private Builder(avro.ch.tkb.bde.ObjectUpdateEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.eventObjType)) {
         this.eventObjType = data().deepCopy(fields()[0].schema(), other.eventObjType);
@@ -768,7 +766,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing ObjectUpdateEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(avro.com.github.bohunn.ObjectUpdateEvent other) {
+    private Builder(avro.ch.tkb.bde.ObjectUpdateEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.eventObjType)) {
         this.eventObjType = data().deepCopy(fields()[0].schema(), other.eventObjType);
@@ -853,7 +851,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * event object type
       * @return The value.
       */
-    public avro.com.github.bohunn.EventObjType getEventObjType() {
+    public avro.ch.tkb.bde.EventObjType getEventObjType() {
       return eventObjType;
     }
 
@@ -864,7 +862,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'eventObjType'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setEventObjType(avro.com.github.bohunn.EventObjType value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setEventObjType(avro.ch.tkb.bde.EventObjType value) {
       validate(fields()[0], value);
       this.eventObjType = value;
       fieldSetFlags()[0] = true;
@@ -886,7 +884,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * event object type
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearEventObjType() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearEventObjType() {
       eventObjType = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -908,7 +906,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bpObjId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setBpObjId(java.lang.Long value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setBpObjId(java.lang.Long value) {
       validate(fields()[1], value);
       this.bpObjId = value;
       fieldSetFlags()[1] = true;
@@ -930,7 +928,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * obj_bp id
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearBpObjId() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearBpObjId() {
       bpObjId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -952,7 +950,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'mainAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setMainAddrId(java.lang.Long value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setMainAddrId(java.lang.Long value) {
       validate(fields()[2], value);
       this.mainAddrId = value;
       fieldSetFlags()[2] = true;
@@ -974,7 +972,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * main address id
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearMainAddrId() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearMainAddrId() {
       mainAddrId = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -996,7 +994,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'mainAddress'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setMainAddress(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setMainAddress(java.lang.String value) {
       validate(fields()[3], value);
       this.mainAddress = value;
       fieldSetFlags()[3] = true;
@@ -1018,7 +1016,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * main address full text
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearMainAddress() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearMainAddress() {
       mainAddress = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1040,7 +1038,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bpName'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setBpName(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setBpName(java.lang.String value) {
       validate(fields()[4], value);
       this.bpName = value;
       fieldSetFlags()[4] = true;
@@ -1062,7 +1060,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * business partner name
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearBpName() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearBpName() {
       bpName = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1084,7 +1082,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bpNr'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setBpNr(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setBpNr(java.lang.String value) {
       validate(fields()[5], value);
       this.bpNr = value;
       fieldSetFlags()[5] = true;
@@ -1106,7 +1104,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * business partner key id 11
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearBpNr() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearBpNr() {
       bpNr = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1126,7 +1124,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'bpCloseDate'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setBpCloseDate(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setBpCloseDate(java.lang.String value) {
       validate(fields()[6], value);
       this.bpCloseDate = value;
       fieldSetFlags()[6] = true;
@@ -1146,7 +1144,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'bpCloseDate' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearBpCloseDate() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearBpCloseDate() {
       bpCloseDate = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -1168,7 +1166,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'personName'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setPersonName(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setPersonName(java.lang.String value) {
       validate(fields()[7], value);
       this.personName = value;
       fieldSetFlags()[7] = true;
@@ -1190,7 +1188,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * person obj id
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearPersonName() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearPersonName() {
       personName = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1212,7 +1210,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'personNr'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setPersonNr(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setPersonNr(java.lang.String value) {
       validate(fields()[8], value);
       this.personNr = value;
       fieldSetFlags()[8] = true;
@@ -1234,7 +1232,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * person key
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearPersonNr() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearPersonNr() {
       personNr = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1254,7 +1252,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'personCloseDate'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setPersonCloseDate(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setPersonCloseDate(java.lang.String value) {
       validate(fields()[9], value);
       this.personCloseDate = value;
       fieldSetFlags()[9] = true;
@@ -1274,7 +1272,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'personCloseDate' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearPersonCloseDate() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearPersonCloseDate() {
       personCloseDate = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1294,7 +1292,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'narilo'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setNarilo(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setNarilo(java.lang.String value) {
       validate(fields()[10], value);
       this.narilo = value;
       fieldSetFlags()[10] = true;
@@ -1314,7 +1312,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'narilo' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearNarilo() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearNarilo() {
       narilo = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1334,7 +1332,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'legalHold'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setLegalHold(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setLegalHold(java.lang.String value) {
       validate(fields()[11], value);
       this.legalHold = value;
       fieldSetFlags()[11] = true;
@@ -1354,7 +1352,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'legalHold' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearLegalHold() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearLegalHold() {
       legalHold = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1374,7 +1372,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'isMa'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setIsMa(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setIsMa(java.lang.String value) {
       validate(fields()[12], value);
       this.isMa = value;
       fieldSetFlags()[12] = true;
@@ -1394,7 +1392,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'isMa' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearIsMa() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearIsMa() {
       isMa = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1416,7 +1414,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'domiAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setDomiAddrId(long value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setDomiAddrId(long value) {
       validate(fields()[13], value);
       this.domiAddrId = value;
       fieldSetFlags()[13] = true;
@@ -1438,7 +1436,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * domicile address
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearDomiAddrId() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearDomiAddrId() {
       fieldSetFlags()[13] = false;
       return this;
     }
@@ -1459,7 +1457,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'domiAddress'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setDomiAddress(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setDomiAddress(java.lang.String value) {
       validate(fields()[14], value);
       this.domiAddress = value;
       fieldSetFlags()[14] = true;
@@ -1481,7 +1479,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * domicile address full text
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearDomiAddress() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearDomiAddress() {
       domiAddress = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1501,7 +1499,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'banklagernd'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setBanklagernd(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setBanklagernd(java.lang.String value) {
       validate(fields()[15], value);
       this.banklagernd = value;
       fieldSetFlags()[15] = true;
@@ -1521,7 +1519,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'banklagernd' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearBanklagernd() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearBanklagernd() {
       banklagernd = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -1541,7 +1539,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'isVip'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setIsVip(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setIsVip(java.lang.String value) {
       validate(fields()[16], value);
       this.isVip = value;
       fieldSetFlags()[16] = true;
@@ -1561,7 +1559,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'isVip' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearIsVip() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearIsVip() {
       isVip = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1581,7 +1579,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'isBoeko'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setIsBoeko(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setIsBoeko(java.lang.String value) {
       validate(fields()[17], value);
       this.isBoeko = value;
       fieldSetFlags()[17] = true;
@@ -1601,7 +1599,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'isBoeko' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearIsBoeko() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearIsBoeko() {
       isBoeko = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -1621,7 +1619,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'hash'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder setHash(java.lang.String value) {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder setHash(java.lang.String value) {
       validate(fields()[18], value);
       this.hash = value;
       fieldSetFlags()[18] = true;
@@ -1641,7 +1639,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'hash' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.ObjectUpdateEvent.Builder clearHash() {
+    public avro.ch.tkb.bde.ObjectUpdateEvent.Builder clearHash() {
       hash = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1652,7 +1650,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     public ObjectUpdateEvent build() {
       try {
         ObjectUpdateEvent record = new ObjectUpdateEvent();
-        record.eventObjType = fieldSetFlags()[0] ? this.eventObjType : (avro.com.github.bohunn.EventObjType) defaultValue(fields()[0]);
+        record.eventObjType = fieldSetFlags()[0] ? this.eventObjType : (avro.ch.tkb.bde.EventObjType) defaultValue(fields()[0]);
         record.bpObjId = fieldSetFlags()[1] ? this.bpObjId : (java.lang.Long) defaultValue(fields()[1]);
         record.mainAddrId = fieldSetFlags()[2] ? this.mainAddrId : (java.lang.Long) defaultValue(fields()[2]);
         record.mainAddress = fieldSetFlags()[3] ? this.mainAddress : (java.lang.String) defaultValue(fields()[3]);
@@ -1820,7 +1818,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.eventObjType = avro.com.github.bohunn.EventObjType.values()[in.readEnum()];
+      this.eventObjType = avro.ch.tkb.bde.EventObjType.values()[in.readEnum()];
 
       if (in.readIndex() != 1) {
         in.readNull();
@@ -1922,7 +1920,7 @@ public class ObjectUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       for (int i = 0; i < 19; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.eventObjType = avro.com.github.bohunn.EventObjType.values()[in.readEnum()];
+          this.eventObjType = avro.ch.tkb.bde.EventObjType.values()[in.readEnum()];
           break;
 
         case 1:

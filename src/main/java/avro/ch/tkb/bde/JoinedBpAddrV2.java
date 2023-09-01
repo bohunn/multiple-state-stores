@@ -3,26 +3,24 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.avro.generic.GenericArray;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
-import org.apache.avro.message.BinaryMessageDecoder;
-import org.apache.avro.message.SchemaStore;
-
 import jakarta.xml.bind.DatatypeConverter;
-import java.io.IOException;
+import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
+import org.apache.avro.message.SchemaStore;
+import org.apache.avro.specific.SpecificData;
 import org.springframework.util.DigestUtils;
 
+import java.io.IOException;
+
 @org.apache.avro.specific.AvroGenerated
-public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, TypedEntity {
-  private static final long serialVersionUID = -6742914784131239291L;
+public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, TypedEntity{
+  private static final long serialVersionUID = 2023441145199873096L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"JoinedBpAddrV2\",\"namespace\":\"avro.com.github.bohunn\",\"fields\":[{\"name\":\"bpObjId\",\"type\":\"long\",\"doc\":\"obj_bp id\"},{\"name\":\"bpName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bpNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"obj_bp key id 11\"},{\"name\":\"closeDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isMa\",\"type\":\"boolean\"},{\"name\":\"isVip\",\"type\":\"boolean\"},{\"name\":\"isBanklagernd\",\"type\":\"boolean\"},{\"name\":\"domiAddrId\",\"type\":\"long\",\"doc\":\"Domicil Address object id\"},{\"name\":\"mainAddrId\",\"type\":\"long\"},{\"name\":\"mainAddresse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isJoint\",\"type\":\"boolean\"},{\"name\":\"relationList\",\"type\":[\"null\",{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"RelationItem\",\"fields\":[{\"name\":\"relationType\",\"type\":{\"type\":\"enum\",\"name\":\"RelationType\",\"doc\":\"RO - Registered Owner, AO - Account Owner, IO - Issuer\",\"symbols\":[\"RO\",\"AO\",\"IO\"],\"default\":\"AO\"},\"doc\":\"Relation Type\"},{\"name\":\"personObjId\",\"type\":\"long\",\"doc\":\"obj_person id of a related person\"},{\"name\":\"validFrom\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid from date\"},{\"name\":\"validTo\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid to date\"}]}],\"default\":\"null\"}],\"doc\":\"Bp-Person relation list\"},{\"name\":\"force\",\"type\":\"int\",\"doc\":\"technical field to force onbase synchronization\"},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"JoinedBpAddrV2\",\"namespace\":\"avro.ch.tkb.bde\",\"fields\":[{\"name\":\"bpObjId\",\"type\":\"long\",\"doc\":\"obj_bp id\"},{\"name\":\"bpName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bpNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"obj_bp key id 11\"},{\"name\":\"closeDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isMa\",\"type\":\"boolean\"},{\"name\":\"isVip\",\"type\":\"boolean\"},{\"name\":\"isBanklagernd\",\"type\":\"boolean\"},{\"name\":\"domiAddrId\",\"type\":\"long\",\"doc\":\"Domicil Address object id\"},{\"name\":\"mainAddrId\",\"type\":\"long\"},{\"name\":\"mainAddresse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"isJoint\",\"type\":\"boolean\"},{\"name\":\"relationList\",\"type\":[\"null\",{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"RelationItem\",\"fields\":[{\"name\":\"relationType\",\"type\":{\"type\":\"enum\",\"name\":\"RelationType\",\"doc\":\"RO - Registered Owner, AO - Account Owner, IO - Issuer\",\"symbols\":[\"RO\",\"AO\",\"IO\"],\"default\":\"AO\"},\"doc\":\"Relation Type\"},{\"name\":\"personObjId\",\"type\":\"long\",\"doc\":\"obj_person id of a related person\"},{\"name\":\"validFrom\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid from date\"},{\"name\":\"validTo\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid to date\"}]}],\"default\":\"null\"}],\"doc\":\"Bp-Person relation list\"},{\"name\":\"force\",\"type\":\"int\",\"doc\":\"technical field to force onbase synchronization\"},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -93,7 +91,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
   private java.lang.String mainAddresse;
   private boolean isJoint;
   /** Bp-Person relation list */
-  private java.util.List<avro.com.github.bohunn.RelationItem> relationList;
+  private java.util.List<avro.ch.tkb.bde.RelationItem> relationList;
   /** technical field to force onbase synchronization */
   private int force;
   private java.lang.String hash;
@@ -122,7 +120,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * @param force technical field to force onbase synchronization
    * @param hash The new value for hash
    */
-  public JoinedBpAddrV2(java.lang.Long bpObjId, java.lang.String bpName, java.lang.String bpNr, java.lang.String closeDate, java.lang.Boolean isMa, java.lang.Boolean isVip, java.lang.Boolean isBanklagernd, java.lang.Long domiAddrId, java.lang.Long mainAddrId, java.lang.String mainAddresse, java.lang.Boolean isJoint, java.util.List<avro.com.github.bohunn.RelationItem> relationList, java.lang.Integer force, java.lang.String hash) {
+  public JoinedBpAddrV2(java.lang.Long bpObjId, java.lang.String bpName, java.lang.String bpNr, java.lang.String closeDate, java.lang.Boolean isMa, java.lang.Boolean isVip, java.lang.Boolean isBanklagernd, java.lang.Long domiAddrId, java.lang.Long mainAddrId, java.lang.String mainAddresse, java.lang.Boolean isJoint, java.util.List<avro.ch.tkb.bde.RelationItem> relationList, java.lang.Integer force, java.lang.String hash) {
     this.bpObjId = bpObjId;
     this.bpName = bpName;
     this.bpNr = bpNr;
@@ -139,7 +137,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
     this.hash = hash;
   }
 
-   /**
+  /**
    * Constructor with automatic hash value calc
    * @param bpObjId obj_bp id
    * @param bpName The new value for bpName
@@ -155,7 +153,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * @param relationList The new value for relationList
    * @param force technical field to force onbase synchronization
    */
-  public JoinedBpAddrV2(java.lang.Long bpObjId, java.lang.String bpName, java.lang.String bpNr, java.lang.String closeDate, java.lang.Boolean isMa, java.lang.Boolean isVip, java.lang.Boolean isBanklagernd, java.lang.Long domiAddrId, java.lang.Long mainAddrId, java.lang.String mainAddresse, java.lang.Boolean isJoint, java.util.List<avro.com.github.bohunn.RelationItem> relationList, java.lang.Integer force) {
+  public JoinedBpAddrV2(java.lang.Long bpObjId, java.lang.String bpName, java.lang.String bpNr, java.lang.String closeDate, java.lang.Boolean isMa, java.lang.Boolean isVip, java.lang.Boolean isBanklagernd, java.lang.Long domiAddrId, java.lang.Long mainAddrId, java.lang.String mainAddresse, java.lang.Boolean isJoint, java.util.List<avro.ch.tkb.bde.RelationItem> relationList, java.lang.Integer force) {
     this.bpObjId = bpObjId;
     this.bpName = bpName;
     this.bpNr = bpNr;
@@ -224,7 +222,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
     case 8: mainAddrId = (java.lang.Long)value$; break;
     case 9: mainAddresse = value$ != null ? value$.toString() : null; break;
     case 10: isJoint = (java.lang.Boolean)value$; break;
-    case 11: relationList = (java.util.List<avro.com.github.bohunn.RelationItem>)value$; break;
+    case 11: relationList = (java.util.List<avro.ch.tkb.bde.RelationItem>)value$; break;
     case 12: force = (java.lang.Integer)value$; break;
     case 13: hash = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -425,7 +423,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'relationList' field.
    * @return Bp-Person relation list
    */
-  public java.util.List<avro.com.github.bohunn.RelationItem> getRelationList() {
+  public java.util.List<avro.ch.tkb.bde.RelationItem> getRelationList() {
     return relationList;
   }
 
@@ -435,7 +433,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * Bp-Person relation list
    * @param value the value to set.
    */
-  public void setRelationList(java.util.List<avro.com.github.bohunn.RelationItem> value) {
+  public void setRelationList(java.util.List<avro.ch.tkb.bde.RelationItem> value) {
     this.relationList = value;
   }
 
@@ -478,8 +476,8 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * Creates a new JoinedBpAddrV2 RecordBuilder.
    * @return A new JoinedBpAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedBpAddrV2.Builder newBuilder() {
-    return new avro.com.github.bohunn.JoinedBpAddrV2.Builder();
+  public static avro.ch.tkb.bde.JoinedBpAddrV2.Builder newBuilder() {
+    return new avro.ch.tkb.bde.JoinedBpAddrV2.Builder();
   }
 
   /**
@@ -487,11 +485,11 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * @param other The existing builder to copy.
    * @return A new JoinedBpAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedBpAddrV2.Builder newBuilder(avro.com.github.bohunn.JoinedBpAddrV2.Builder other) {
+  public static avro.ch.tkb.bde.JoinedBpAddrV2.Builder newBuilder(avro.ch.tkb.bde.JoinedBpAddrV2.Builder other) {
     if (other == null) {
-      return new avro.com.github.bohunn.JoinedBpAddrV2.Builder();
+      return new avro.ch.tkb.bde.JoinedBpAddrV2.Builder();
     } else {
-      return new avro.com.github.bohunn.JoinedBpAddrV2.Builder(other);
+      return new avro.ch.tkb.bde.JoinedBpAddrV2.Builder(other);
     }
   }
 
@@ -500,11 +498,11 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
    * @param other The existing instance to copy.
    * @return A new JoinedBpAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedBpAddrV2.Builder newBuilder(avro.com.github.bohunn.JoinedBpAddrV2 other) {
+  public static avro.ch.tkb.bde.JoinedBpAddrV2.Builder newBuilder(avro.ch.tkb.bde.JoinedBpAddrV2 other) {
     if (other == null) {
-      return new avro.com.github.bohunn.JoinedBpAddrV2.Builder();
+      return new avro.ch.tkb.bde.JoinedBpAddrV2.Builder();
     } else {
-      return new avro.com.github.bohunn.JoinedBpAddrV2.Builder(other);
+      return new avro.ch.tkb.bde.JoinedBpAddrV2.Builder(other);
     }
   }
 
@@ -535,7 +533,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
     private java.lang.String mainAddresse;
     private boolean isJoint;
     /** Bp-Person relation list */
-    private java.util.List<avro.com.github.bohunn.RelationItem> relationList;
+    private java.util.List<avro.ch.tkb.bde.RelationItem> relationList;
     /** technical field to force onbase synchronization */
     private int force;
     private java.lang.String hash;
@@ -549,7 +547,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(avro.com.github.bohunn.JoinedBpAddrV2.Builder other) {
+    private Builder(avro.ch.tkb.bde.JoinedBpAddrV2.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.bpObjId)) {
         this.bpObjId = data().deepCopy(fields()[0].schema(), other.bpObjId);
@@ -613,7 +611,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
      * Creates a Builder by copying an existing JoinedBpAddrV2 instance
      * @param other The existing instance to copy.
      */
-    private Builder(avro.com.github.bohunn.JoinedBpAddrV2 other) {
+    private Builder(avro.ch.tkb.bde.JoinedBpAddrV2 other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.bpObjId)) {
         this.bpObjId = data().deepCopy(fields()[0].schema(), other.bpObjId);
@@ -689,7 +687,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'bpObjId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setBpObjId(long value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setBpObjId(long value) {
       validate(fields()[0], value);
       this.bpObjId = value;
       fieldSetFlags()[0] = true;
@@ -711,7 +709,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * obj_bp id
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearBpObjId() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearBpObjId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -730,7 +728,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'bpName'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setBpName(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setBpName(java.lang.String value) {
       validate(fields()[1], value);
       this.bpName = value;
       fieldSetFlags()[1] = true;
@@ -750,7 +748,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'bpName' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearBpName() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearBpName() {
       bpName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -772,7 +770,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'bpNr'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setBpNr(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setBpNr(java.lang.String value) {
       validate(fields()[2], value);
       this.bpNr = value;
       fieldSetFlags()[2] = true;
@@ -794,7 +792,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * obj_bp key id 11
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearBpNr() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearBpNr() {
       bpNr = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -814,7 +812,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'closeDate'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setCloseDate(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setCloseDate(java.lang.String value) {
       validate(fields()[3], value);
       this.closeDate = value;
       fieldSetFlags()[3] = true;
@@ -834,7 +832,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'closeDate' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearCloseDate() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearCloseDate() {
       closeDate = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -854,7 +852,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'isMa'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setIsMa(boolean value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setIsMa(boolean value) {
       validate(fields()[4], value);
       this.isMa = value;
       fieldSetFlags()[4] = true;
@@ -874,7 +872,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'isMa' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearIsMa() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearIsMa() {
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -893,7 +891,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'isVip'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setIsVip(boolean value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setIsVip(boolean value) {
       validate(fields()[5], value);
       this.isVip = value;
       fieldSetFlags()[5] = true;
@@ -913,7 +911,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'isVip' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearIsVip() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearIsVip() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -932,7 +930,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'isBanklagernd'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setIsBanklagernd(boolean value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setIsBanklagernd(boolean value) {
       validate(fields()[6], value);
       this.isBanklagernd = value;
       fieldSetFlags()[6] = true;
@@ -952,7 +950,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'isBanklagernd' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearIsBanklagernd() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearIsBanklagernd() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -973,7 +971,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'domiAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setDomiAddrId(long value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setDomiAddrId(long value) {
       validate(fields()[7], value);
       this.domiAddrId = value;
       fieldSetFlags()[7] = true;
@@ -995,7 +993,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Domicil Address object id
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearDomiAddrId() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearDomiAddrId() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -1014,7 +1012,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'mainAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setMainAddrId(long value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setMainAddrId(long value) {
       validate(fields()[8], value);
       this.mainAddrId = value;
       fieldSetFlags()[8] = true;
@@ -1034,7 +1032,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'mainAddrId' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearMainAddrId() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearMainAddrId() {
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -1053,7 +1051,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'mainAddresse'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setMainAddresse(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setMainAddresse(java.lang.String value) {
       validate(fields()[9], value);
       this.mainAddresse = value;
       fieldSetFlags()[9] = true;
@@ -1073,7 +1071,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'mainAddresse' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearMainAddresse() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearMainAddresse() {
       mainAddresse = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1093,7 +1091,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'isJoint'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setIsJoint(boolean value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setIsJoint(boolean value) {
       validate(fields()[10], value);
       this.isJoint = value;
       fieldSetFlags()[10] = true;
@@ -1113,7 +1111,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'isJoint' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearIsJoint() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearIsJoint() {
       fieldSetFlags()[10] = false;
       return this;
     }
@@ -1123,7 +1121,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Bp-Person relation list
       * @return The value.
       */
-    public java.util.List<avro.com.github.bohunn.RelationItem> getRelationList() {
+    public java.util.List<avro.ch.tkb.bde.RelationItem> getRelationList() {
       return relationList;
     }
 
@@ -1134,7 +1132,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'relationList'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setRelationList(java.util.List<avro.com.github.bohunn.RelationItem> value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setRelationList(java.util.List<avro.ch.tkb.bde.RelationItem> value) {
       validate(fields()[11], value);
       this.relationList = value;
       fieldSetFlags()[11] = true;
@@ -1156,7 +1154,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Bp-Person relation list
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearRelationList() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearRelationList() {
       relationList = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1178,7 +1176,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'force'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setForce(int value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setForce(int value) {
       validate(fields()[12], value);
       this.force = value;
       fieldSetFlags()[12] = true;
@@ -1200,7 +1198,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * technical field to force onbase synchronization
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearForce() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearForce() {
       fieldSetFlags()[12] = false;
       return this;
     }
@@ -1219,7 +1217,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'hash'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder setHash(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder setHash(java.lang.String value) {
       validate(fields()[13], value);
       this.hash = value;
       fieldSetFlags()[13] = true;
@@ -1239,7 +1237,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       * Clears the value of the 'hash' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedBpAddrV2.Builder clearHash() {
+    public avro.ch.tkb.bde.JoinedBpAddrV2.Builder clearHash() {
       hash = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1261,7 +1259,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
         record.mainAddrId = fieldSetFlags()[8] ? this.mainAddrId : (java.lang.Long) defaultValue(fields()[8]);
         record.mainAddresse = fieldSetFlags()[9] ? this.mainAddresse : (java.lang.String) defaultValue(fields()[9]);
         record.isJoint = fieldSetFlags()[10] ? this.isJoint : (java.lang.Boolean) defaultValue(fields()[10]);
-        record.relationList = fieldSetFlags()[11] ? this.relationList : (java.util.List<avro.com.github.bohunn.RelationItem>) defaultValue(fields()[11]);
+        record.relationList = fieldSetFlags()[11] ? this.relationList : (java.util.List<avro.ch.tkb.bde.RelationItem>) defaultValue(fields()[11]);
         record.force = fieldSetFlags()[12] ? this.force : (java.lang.Integer) defaultValue(fields()[12]);
         record.hash = fieldSetFlags()[13] ? this.hash : (java.lang.String) defaultValue(fields()[13]);
         return record;
@@ -1339,7 +1337,7 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
       out.writeArrayStart();
       out.setItemCount(size0);
       long actualSize0 = 0;
-      for (avro.com.github.bohunn.RelationItem e0: this.relationList) {
+      for (avro.ch.tkb.bde.RelationItem e0: this.relationList) {
         actualSize0++;
         out.startItem();
         if (e0 == null) {
@@ -1403,21 +1401,21 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
         this.relationList = null;
       } else {
         long size0 = in.readArrayStart();
-        java.util.List<avro.com.github.bohunn.RelationItem> a0 = this.relationList;
+        java.util.List<avro.ch.tkb.bde.RelationItem> a0 = this.relationList;
         if (a0 == null) {
-          a0 = new SpecificData.Array<avro.com.github.bohunn.RelationItem>((int)size0, SCHEMA$.getField("relationList").schema().getTypes().get(1));
+          a0 = new SpecificData.Array<avro.ch.tkb.bde.RelationItem>((int)size0, SCHEMA$.getField("relationList").schema().getTypes().get(1));
           this.relationList = a0;
         } else a0.clear();
-        SpecificData.Array<avro.com.github.bohunn.RelationItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<avro.com.github.bohunn.RelationItem>)a0 : null);
+        SpecificData.Array<avro.ch.tkb.bde.RelationItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<avro.ch.tkb.bde.RelationItem>)a0 : null);
         for ( ; 0 < size0; size0 = in.arrayNext()) {
           for ( ; size0 != 0; size0--) {
-            avro.com.github.bohunn.RelationItem e0 = (ga0 != null ? ga0.peek() : null);
+            avro.ch.tkb.bde.RelationItem e0 = (ga0 != null ? ga0.peek() : null);
             if (in.readIndex() != 1) {
               in.readNull();
               e0 = null;
             } else {
               if (e0 == null) {
-                e0 = new avro.com.github.bohunn.RelationItem();
+                e0 = new avro.ch.tkb.bde.RelationItem();
               }
               e0.customDecode(in);
             }
@@ -1493,21 +1491,21 @@ public class JoinedBpAddrV2 extends org.apache.avro.specific.SpecificRecordBase 
             this.relationList = null;
           } else {
             long size0 = in.readArrayStart();
-            java.util.List<avro.com.github.bohunn.RelationItem> a0 = this.relationList;
+            java.util.List<avro.ch.tkb.bde.RelationItem> a0 = this.relationList;
             if (a0 == null) {
-              a0 = new SpecificData.Array<avro.com.github.bohunn.RelationItem>((int)size0, SCHEMA$.getField("relationList").schema().getTypes().get(1));
+              a0 = new SpecificData.Array<avro.ch.tkb.bde.RelationItem>((int)size0, SCHEMA$.getField("relationList").schema().getTypes().get(1));
               this.relationList = a0;
             } else a0.clear();
-            SpecificData.Array<avro.com.github.bohunn.RelationItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<avro.com.github.bohunn.RelationItem>)a0 : null);
+            SpecificData.Array<avro.ch.tkb.bde.RelationItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<avro.ch.tkb.bde.RelationItem>)a0 : null);
             for ( ; 0 < size0; size0 = in.arrayNext()) {
               for ( ; size0 != 0; size0--) {
-                avro.com.github.bohunn.RelationItem e0 = (ga0 != null ? ga0.peek() : null);
+                avro.ch.tkb.bde.RelationItem e0 = (ga0 != null ? ga0.peek() : null);
                 if (in.readIndex() != 1) {
                   in.readNull();
                   e0 = null;
                 } else {
                   if (e0 == null) {
-                    e0 = new avro.com.github.bohunn.RelationItem();
+                    e0 = new avro.ch.tkb.bde.RelationItem();
                   }
                   e0.customDecode(in);
                 }

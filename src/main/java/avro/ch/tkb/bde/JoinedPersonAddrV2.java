@@ -3,26 +3,24 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.avro.generic.GenericArray;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
-import org.apache.avro.message.BinaryMessageDecoder;
-import org.apache.avro.message.SchemaStore;
-
 import jakarta.xml.bind.DatatypeConverter;
-import java.io.IOException;
+import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
+import org.apache.avro.message.SchemaStore;
+import org.apache.avro.specific.SpecificData;
 import org.springframework.util.DigestUtils;
+
+import java.io.IOException;
 
 @org.apache.avro.specific.AvroGenerated
 public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord, TypedEntity {
-  private static final long serialVersionUID = -7793891622861610026L;
+  private static final long serialVersionUID = 264443431241259008L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"JoinedPersonAddrV2\",\"namespace\":\"avro.com.github.bohunn\",\"fields\":[{\"name\":\"objPersonId\",\"type\":\"long\",\"doc\":\"obj person id\"},{\"name\":\"objAddrId\",\"type\":\"long\",\"doc\":\"obj addr id\"},{\"name\":\"personName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"personNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"obj_person key id 807\"},{\"name\":\"domiAddrId\",\"type\":\"long\"},{\"name\":\"narilo\",\"type\":\"boolean\"},{\"name\":\"isBoeko\",\"type\":\"boolean\"},{\"name\":\"legalHold\",\"type\":\"boolean\"},{\"name\":\"addrFull\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"closeDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"force\",\"type\":\"int\",\"doc\":\"technical field to force onbase synchronization\"},{\"name\":\"isEmittent\",\"type\":\"boolean\",\"default\":false},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"JoinedPersonAddrV2\",\"namespace\":\"avro.ch.tkb.bde\",\"fields\":[{\"name\":\"objPersonId\",\"type\":\"long\",\"doc\":\"obj person id\"},{\"name\":\"objAddrId\",\"type\":\"long\",\"doc\":\"obj addr id\"},{\"name\":\"personName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"personNr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"obj_person key id 807\"},{\"name\":\"domiAddrId\",\"type\":\"long\"},{\"name\":\"narilo\",\"type\":\"boolean\"},{\"name\":\"isBoeko\",\"type\":\"boolean\"},{\"name\":\"legalHold\",\"type\":\"boolean\"},{\"name\":\"addrFull\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"closeDate\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"force\",\"type\":\"int\",\"doc\":\"technical field to force onbase synchronization\"},{\"name\":\"isEmittent\",\"type\":\"boolean\",\"default\":false},{\"name\":\"hash\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -135,7 +133,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
     this.hash = hash;
   }
 
-    /**
+  /**
    * Constructor with automatic hash value calc
    * @param objPersonId obj person id
    * @param objAddrId obj addr id
@@ -173,6 +171,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       throw new IllegalStateException(var19);
     }
   }
+
 
   @Override
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -452,8 +451,8 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
    * Creates a new JoinedPersonAddrV2 RecordBuilder.
    * @return A new JoinedPersonAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedPersonAddrV2.Builder newBuilder() {
-    return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder();
+  public static avro.ch.tkb.bde.JoinedPersonAddrV2.Builder newBuilder() {
+    return new avro.ch.tkb.bde.JoinedPersonAddrV2.Builder();
   }
 
   /**
@@ -461,11 +460,11 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
    * @param other The existing builder to copy.
    * @return A new JoinedPersonAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedPersonAddrV2.Builder newBuilder(avro.com.github.bohunn.JoinedPersonAddrV2.Builder other) {
+  public static avro.ch.tkb.bde.JoinedPersonAddrV2.Builder newBuilder(avro.ch.tkb.bde.JoinedPersonAddrV2.Builder other) {
     if (other == null) {
-      return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder();
+      return new avro.ch.tkb.bde.JoinedPersonAddrV2.Builder();
     } else {
-      return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder(other);
+      return new avro.ch.tkb.bde.JoinedPersonAddrV2.Builder(other);
     }
   }
 
@@ -474,11 +473,11 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
    * @param other The existing instance to copy.
    * @return A new JoinedPersonAddrV2 RecordBuilder
    */
-  public static avro.com.github.bohunn.JoinedPersonAddrV2.Builder newBuilder(avro.com.github.bohunn.JoinedPersonAddrV2 other) {
+  public static avro.ch.tkb.bde.JoinedPersonAddrV2.Builder newBuilder(avro.ch.tkb.bde.JoinedPersonAddrV2 other) {
     if (other == null) {
-      return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder();
+      return new avro.ch.tkb.bde.JoinedPersonAddrV2.Builder();
     } else {
-      return new avro.com.github.bohunn.JoinedPersonAddrV2.Builder(other);
+      return new avro.ch.tkb.bde.JoinedPersonAddrV2.Builder(other);
     }
   }
 
@@ -521,7 +520,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(avro.com.github.bohunn.JoinedPersonAddrV2.Builder other) {
+    private Builder(avro.ch.tkb.bde.JoinedPersonAddrV2.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.objPersonId)) {
         this.objPersonId = data().deepCopy(fields()[0].schema(), other.objPersonId);
@@ -581,7 +580,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
      * Creates a Builder by copying an existing JoinedPersonAddrV2 instance
      * @param other The existing instance to copy.
      */
-    private Builder(avro.com.github.bohunn.JoinedPersonAddrV2 other) {
+    private Builder(avro.ch.tkb.bde.JoinedPersonAddrV2 other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.objPersonId)) {
         this.objPersonId = data().deepCopy(fields()[0].schema(), other.objPersonId);
@@ -653,7 +652,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'objPersonId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setObjPersonId(long value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setObjPersonId(long value) {
       validate(fields()[0], value);
       this.objPersonId = value;
       fieldSetFlags()[0] = true;
@@ -675,7 +674,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * obj person id
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearObjPersonId() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearObjPersonId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -696,7 +695,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'objAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setObjAddrId(long value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setObjAddrId(long value) {
       validate(fields()[1], value);
       this.objAddrId = value;
       fieldSetFlags()[1] = true;
@@ -718,7 +717,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * obj addr id
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearObjAddrId() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearObjAddrId() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -737,7 +736,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'personName'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setPersonName(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setPersonName(java.lang.String value) {
       validate(fields()[2], value);
       this.personName = value;
       fieldSetFlags()[2] = true;
@@ -757,7 +756,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'personName' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearPersonName() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearPersonName() {
       personName = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -779,7 +778,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'personNr'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setPersonNr(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setPersonNr(java.lang.String value) {
       validate(fields()[3], value);
       this.personNr = value;
       fieldSetFlags()[3] = true;
@@ -801,7 +800,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * obj_person key id 807
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearPersonNr() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearPersonNr() {
       personNr = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -821,7 +820,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'domiAddrId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setDomiAddrId(long value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setDomiAddrId(long value) {
       validate(fields()[4], value);
       this.domiAddrId = value;
       fieldSetFlags()[4] = true;
@@ -841,7 +840,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'domiAddrId' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearDomiAddrId() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearDomiAddrId() {
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -860,7 +859,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'narilo'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setNarilo(boolean value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setNarilo(boolean value) {
       validate(fields()[5], value);
       this.narilo = value;
       fieldSetFlags()[5] = true;
@@ -880,7 +879,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'narilo' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearNarilo() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearNarilo() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -899,7 +898,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'isBoeko'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setIsBoeko(boolean value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setIsBoeko(boolean value) {
       validate(fields()[6], value);
       this.isBoeko = value;
       fieldSetFlags()[6] = true;
@@ -919,7 +918,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'isBoeko' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearIsBoeko() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearIsBoeko() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -938,7 +937,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'legalHold'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setLegalHold(boolean value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setLegalHold(boolean value) {
       validate(fields()[7], value);
       this.legalHold = value;
       fieldSetFlags()[7] = true;
@@ -958,7 +957,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'legalHold' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearLegalHold() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearLegalHold() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -977,7 +976,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'addrFull'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setAddrFull(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setAddrFull(java.lang.String value) {
       validate(fields()[8], value);
       this.addrFull = value;
       fieldSetFlags()[8] = true;
@@ -997,7 +996,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'addrFull' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearAddrFull() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearAddrFull() {
       addrFull = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1017,7 +1016,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'closeDate'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setCloseDate(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setCloseDate(java.lang.String value) {
       validate(fields()[9], value);
       this.closeDate = value;
       fieldSetFlags()[9] = true;
@@ -1037,7 +1036,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'closeDate' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearCloseDate() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearCloseDate() {
       closeDate = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1059,7 +1058,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'force'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setForce(int value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setForce(int value) {
       validate(fields()[10], value);
       this.force = value;
       fieldSetFlags()[10] = true;
@@ -1081,7 +1080,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * technical field to force onbase synchronization
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearForce() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearForce() {
       fieldSetFlags()[10] = false;
       return this;
     }
@@ -1100,7 +1099,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'isEmittent'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setIsEmittent(boolean value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setIsEmittent(boolean value) {
       validate(fields()[11], value);
       this.isEmittent = value;
       fieldSetFlags()[11] = true;
@@ -1120,7 +1119,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'isEmittent' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearIsEmittent() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearIsEmittent() {
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -1139,7 +1138,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'hash'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder setHash(java.lang.String value) {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder setHash(java.lang.String value) {
       validate(fields()[12], value);
       this.hash = value;
       fieldSetFlags()[12] = true;
@@ -1159,7 +1158,7 @@ public class JoinedPersonAddrV2 extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'hash' field.
       * @return This builder.
       */
-    public avro.com.github.bohunn.JoinedPersonAddrV2.Builder clearHash() {
+    public avro.ch.tkb.bde.JoinedPersonAddrV2.Builder clearHash() {
       hash = null;
       fieldSetFlags()[12] = false;
       return this;

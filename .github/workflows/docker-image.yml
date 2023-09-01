@@ -3,7 +3,7 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - master
+      - tkb-branch
 
 jobs:
   build-and-publish:
@@ -23,7 +23,7 @@ jobs:
       - name: Build and tag Docker image
         run: |
           DOCKER_IMAGE_NAME="bohunn/multiple-state-stores"
-          DOCKER_IMAGE_TAG=${{ steps.commit_id.outputs.commit_id }}
+          DOCKER_IMAGE_TAG= "tkb-branch-${{ steps.commit_id.outputs.commit_id }}"
           docker buildx build \
             --platform linux/amd64 \
             --tag "$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG" \

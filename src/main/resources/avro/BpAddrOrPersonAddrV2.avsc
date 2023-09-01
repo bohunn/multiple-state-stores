@@ -1,18 +1,18 @@
 {
   "name": "BpAddrOrPersonAddrV2",
-  "namespace": "avro.com.github.bohunn",
+  "namespace": "avro.ch.tkb.bde",
   "doc": "Either record for BpAddr and PersonAddr records - used in custom join processor",
   "type": "record",
   "fields": [
     {
       "name": "personAddr",
       "doc": "joined person-addr object",
-      "type": ["null","avro.com.github.bohunn.JoinedPersonAddrV2"]
+      "type": ["null","avro.ch.tkb.bde.JoinedPersonAddrV2"]
     },
     {
       "name": "bpAddr",
       "doc": "joined bp-addr object",
-      "type": ["null","avro.com.github.bohunn.JoinedBpAddrV2"]
+      "type": ["null","avro.ch.tkb.bde.JoinedBpAddrV2"]
     }
   ]
 }

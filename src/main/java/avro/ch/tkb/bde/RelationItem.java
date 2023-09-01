@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class RelationItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6863470312477848767L;
+  private static final long serialVersionUID = -3219699121448490401L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelationItem\",\"namespace\":\"avro.com.github.bohunn\",\"fields\":[{\"name\":\"relationType\",\"type\":{\"type\":\"enum\",\"name\":\"RelationType\",\"doc\":\"RO - Registered Owner, AO - Account Owner, IO - Issuer\",\"symbols\":[\"RO\",\"AO\",\"IO\"],\"default\":\"AO\"},\"doc\":\"Relation Type\"},{\"name\":\"personObjId\",\"type\":\"long\",\"doc\":\"obj_person id of a related person\"},{\"name\":\"validFrom\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid from date\"},{\"name\":\"validTo\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid to date\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RelationItem\",\"namespace\":\"avro.ch.tkb.bde\",\"fields\":[{\"name\":\"relationType\",\"type\":{\"type\":\"enum\",\"name\":\"RelationType\",\"doc\":\"RO - Registered Owner, AO - Account Owner, IO - Issuer\",\"symbols\":[\"RO\",\"AO\",\"IO\"],\"default\":\"AO\"},\"doc\":\"Relation Type\"},{\"name\":\"personObjId\",\"type\":\"long\",\"doc\":\"obj_person id of a related person\"},{\"name\":\"validFrom\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid from date\"},{\"name\":\"validTo\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"relation valid to date\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -74,7 +74,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /** Relation Type */
-  private avro.com.github.bohunn.RelationType relationType;
+  private avro.ch.tkb.bde.RelationType relationType;
   /** obj_person id of a related person */
   private long personObjId;
   /** relation valid from date */
@@ -96,7 +96,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * @param validFrom relation valid from date
    * @param validTo relation valid to date
    */
-  public RelationItem(avro.com.github.bohunn.RelationType relationType, java.lang.Long personObjId, java.lang.String validFrom, java.lang.String validTo) {
+  public RelationItem(avro.ch.tkb.bde.RelationType relationType, java.lang.Long personObjId, java.lang.String validFrom, java.lang.String validTo) {
     this.relationType = relationType;
     this.personObjId = personObjId;
     this.validFrom = validFrom;
@@ -126,7 +126,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: relationType = (avro.com.github.bohunn.RelationType)value$; break;
+    case 0: relationType = (avro.ch.tkb.bde.RelationType)value$; break;
     case 1: personObjId = (java.lang.Long)value$; break;
     case 2: validFrom = value$ != null ? value$.toString() : null; break;
     case 3: validTo = value$ != null ? value$.toString() : null; break;
@@ -138,7 +138,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * Gets the value of the 'relationType' field.
    * @return Relation Type
    */
-  public avro.com.github.bohunn.RelationType getRelationType() {
+  public avro.ch.tkb.bde.RelationType getRelationType() {
     return relationType;
   }
 
@@ -148,7 +148,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * Relation Type
    * @param value the value to set.
    */
-  public void setRelationType(avro.com.github.bohunn.RelationType value) {
+  public void setRelationType(avro.ch.tkb.bde.RelationType value) {
     this.relationType = value;
   }
 
@@ -210,8 +210,8 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * Creates a new RelationItem RecordBuilder.
    * @return A new RelationItem RecordBuilder
    */
-  public static avro.com.github.bohunn.RelationItem.Builder newBuilder() {
-    return new avro.com.github.bohunn.RelationItem.Builder();
+  public static avro.ch.tkb.bde.RelationItem.Builder newBuilder() {
+    return new avro.ch.tkb.bde.RelationItem.Builder();
   }
 
   /**
@@ -219,11 +219,11 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing builder to copy.
    * @return A new RelationItem RecordBuilder
    */
-  public static avro.com.github.bohunn.RelationItem.Builder newBuilder(avro.com.github.bohunn.RelationItem.Builder other) {
+  public static avro.ch.tkb.bde.RelationItem.Builder newBuilder(avro.ch.tkb.bde.RelationItem.Builder other) {
     if (other == null) {
-      return new avro.com.github.bohunn.RelationItem.Builder();
+      return new avro.ch.tkb.bde.RelationItem.Builder();
     } else {
-      return new avro.com.github.bohunn.RelationItem.Builder(other);
+      return new avro.ch.tkb.bde.RelationItem.Builder(other);
     }
   }
 
@@ -232,11 +232,11 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
    * @param other The existing instance to copy.
    * @return A new RelationItem RecordBuilder
    */
-  public static avro.com.github.bohunn.RelationItem.Builder newBuilder(avro.com.github.bohunn.RelationItem other) {
+  public static avro.ch.tkb.bde.RelationItem.Builder newBuilder(avro.ch.tkb.bde.RelationItem other) {
     if (other == null) {
-      return new avro.com.github.bohunn.RelationItem.Builder();
+      return new avro.ch.tkb.bde.RelationItem.Builder();
     } else {
-      return new avro.com.github.bohunn.RelationItem.Builder(other);
+      return new avro.ch.tkb.bde.RelationItem.Builder(other);
     }
   }
 
@@ -248,7 +248,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
     implements org.apache.avro.data.RecordBuilder<RelationItem> {
 
     /** Relation Type */
-    private avro.com.github.bohunn.RelationType relationType;
+    private avro.ch.tkb.bde.RelationType relationType;
     /** obj_person id of a related person */
     private long personObjId;
     /** relation valid from date */
@@ -265,7 +265,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(avro.com.github.bohunn.RelationItem.Builder other) {
+    private Builder(avro.ch.tkb.bde.RelationItem.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.relationType)) {
         this.relationType = data().deepCopy(fields()[0].schema(), other.relationType);
@@ -289,7 +289,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing RelationItem instance
      * @param other The existing instance to copy.
      */
-    private Builder(avro.com.github.bohunn.RelationItem other) {
+    private Builder(avro.ch.tkb.bde.RelationItem other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.relationType)) {
         this.relationType = data().deepCopy(fields()[0].schema(), other.relationType);
@@ -314,7 +314,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * Relation Type
       * @return The value.
       */
-    public avro.com.github.bohunn.RelationType getRelationType() {
+    public avro.ch.tkb.bde.RelationType getRelationType() {
       return relationType;
     }
 
@@ -325,7 +325,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'relationType'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder setRelationType(avro.com.github.bohunn.RelationType value) {
+    public avro.ch.tkb.bde.RelationItem.Builder setRelationType(avro.ch.tkb.bde.RelationType value) {
       validate(fields()[0], value);
       this.relationType = value;
       fieldSetFlags()[0] = true;
@@ -347,7 +347,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * Relation Type
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder clearRelationType() {
+    public avro.ch.tkb.bde.RelationItem.Builder clearRelationType() {
       relationType = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -369,7 +369,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'personObjId'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder setPersonObjId(long value) {
+    public avro.ch.tkb.bde.RelationItem.Builder setPersonObjId(long value) {
       validate(fields()[1], value);
       this.personObjId = value;
       fieldSetFlags()[1] = true;
@@ -391,7 +391,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * obj_person id of a related person
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder clearPersonObjId() {
+    public avro.ch.tkb.bde.RelationItem.Builder clearPersonObjId() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -412,7 +412,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'validFrom'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder setValidFrom(java.lang.String value) {
+    public avro.ch.tkb.bde.RelationItem.Builder setValidFrom(java.lang.String value) {
       validate(fields()[2], value);
       this.validFrom = value;
       fieldSetFlags()[2] = true;
@@ -434,7 +434,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * relation valid from date
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder clearValidFrom() {
+    public avro.ch.tkb.bde.RelationItem.Builder clearValidFrom() {
       validFrom = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -456,7 +456,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'validTo'.
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder setValidTo(java.lang.String value) {
+    public avro.ch.tkb.bde.RelationItem.Builder setValidTo(java.lang.String value) {
       validate(fields()[3], value);
       this.validTo = value;
       fieldSetFlags()[3] = true;
@@ -478,7 +478,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       * relation valid to date
       * @return This builder.
       */
-    public avro.com.github.bohunn.RelationItem.Builder clearValidTo() {
+    public avro.ch.tkb.bde.RelationItem.Builder clearValidTo() {
       validTo = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -489,7 +489,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
     public RelationItem build() {
       try {
         RelationItem record = new RelationItem();
-        record.relationType = fieldSetFlags()[0] ? this.relationType : (avro.com.github.bohunn.RelationType) defaultValue(fields()[0]);
+        record.relationType = fieldSetFlags()[0] ? this.relationType : (avro.ch.tkb.bde.RelationType) defaultValue(fields()[0]);
         record.personObjId = fieldSetFlags()[1] ? this.personObjId : (java.lang.Long) defaultValue(fields()[1]);
         record.validFrom = fieldSetFlags()[2] ? this.validFrom : (java.lang.String) defaultValue(fields()[2]);
         record.validTo = fieldSetFlags()[3] ? this.validTo : (java.lang.String) defaultValue(fields()[3]);
@@ -540,7 +540,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.relationType = avro.com.github.bohunn.RelationType.values()[in.readEnum()];
+      this.relationType = avro.ch.tkb.bde.RelationType.values()[in.readEnum()];
 
       this.personObjId = in.readLong();
 
@@ -552,7 +552,7 @@ public class RelationItem extends org.apache.avro.specific.SpecificRecordBase im
       for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.relationType = avro.com.github.bohunn.RelationType.values()[in.readEnum()];
+          this.relationType = avro.ch.tkb.bde.RelationType.values()[in.readEnum()];
           break;
 
         case 1:

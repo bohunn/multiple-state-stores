@@ -3,11 +3,11 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package avro.com.github.bohunn;
+package avro.ch.tkb.bde;
 @org.apache.avro.specific.AvroGenerated
 public enum EventObjType implements org.apache.avro.generic.GenericEnumSymbol<EventObjType> {
   FULL, PERSON_ONLY, BP_ONLY  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"EventObjType\",\"namespace\":\"avro.com.github.bohunn\",\"symbols\":[\"FULL\",\"PERSON_ONLY\",\"BP_ONLY\"],\"default\":\"FULL\"}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"EventObjType\",\"namespace\":\"avro.ch.tkb.bde\",\"symbols\":[\"FULL\",\"PERSON_ONLY\",\"BP_ONLY\"],\"default\":\"FULL\"}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   @Override

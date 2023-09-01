@@ -1,6 +1,6 @@
 {
     "name": "RelationItem",
-    "namespace": "avro.com.github.bohunn",
+    "namespace": "avro.ch.tkb.bde",
     "type": "record",
     "fields": [
       {

@@ -1,6 +1,6 @@
 {
   "name": "JoinedBpAddrV2",
-  "namespace": "avro.com.github.bohunn",
+  "namespace": "avro.ch.tkb.bde",
   "type": "record",
   "fields": [
     {
@@ -55,7 +55,7 @@
       "doc": "Bp-Person relation list",
       "type": ["null", {
         "type": "array",
-        "items": ["null", "avro.com.github.bohunn.RelationItem"],
+        "items": ["null", "avro.ch.tkb.bde.RelationItem"],
         "default": "null"
       }]
     },
