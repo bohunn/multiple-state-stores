@@ -49,11 +49,13 @@ public class MultiStoresConfig {
     @Value("${joined.bp.addr.output.topic.name}")
     private String joinedBpAddrOutputTopicName;
 
+    @Value("${spring.kafka.streams.application-id}")
+    private String streamerApplicationId;
+
     @Bean
     public SpecificAvroSerde<JoinedBpAddrV2> joinedBpAddrSerde() {
         return new SpecificAvroSerde<>();
     }
-
     @Bean
     public SpecificAvroSerde<JoinedPersonAddrV2> joinedPersonAddrSerde() {
         return new SpecificAvroSerde<>();
@@ -71,7 +73,7 @@ public class MultiStoresConfig {
     KafkaStreamsConfiguration kStreamsConfigs() {
         Map<String, Object> properties = new HashMap<>();
 
-        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "joiner-application");
+        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, streamerApplicationId);
         properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
