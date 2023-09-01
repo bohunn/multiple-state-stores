@@ -1,0 +1,69 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: my-schema-registry
+  labels:
+    app: my-schema-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-schema-registry
+  template:
+    metadata:
+      labels:
+        app: my-schema-registry
+    spec:
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      affinity: {}
+      terminationGracePeriodSeconds: 30
+      securityContext: {}
+      containers:
+        - name: my-schema-registry
+          resources: {}
+          image: confluentinc/cp-schema-registry:7.2.0
+          env:
+            - name: SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS
+              value: "my-cluster-kafka-bootstrap.kafka-test.svc:9092"
+            - name: SCHEMA_REGISTRY_HOST_NAME
+              value: "schema-registry"
+            - name: SCHEMA_REGISTRY_DEBUG
+              value: "true"
+            - name: SCHEMA_REGISTRY_KAFKASTORE_SECURITY_PROTOCOL
+              value: "PLAINTEXT"
+            - name: SCHEMA_REGISTRY_KAFKASTORE_GROUP_ID
+              value: "schema-registry"
+            - name: SCHEMA_REGISTRY_SCHEMA_REGISTRY_GROUP_ID
+              value: "schema-registry"
+            - name : SCHEMA_REGISTRY_KAFKASTORE_TOPIC_REPLICATION_FACTOR
+              value: "1"
+          ports:
+            - name: rest-api
+              containerPort: 8081
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      imagePullSecrets: []
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+---
+# Path: .docs/service-registry-deployment.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-schema-registry
+  labels:
+    app: my-schema-registry
+spec:
+  type: ClusterIP
+  selector:
+    app: my-schema-registry
+  ports:
+    - name: rest-api
+      port: 8081
+      targetPort: 8081
+      protocol: TCP

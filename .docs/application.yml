@@ -1,0 +1,10 @@
+akhq:
+  metrics:
+    enabled: false
+  connections:
+    kafka-cluster:
+      properties:
+        bootstrap.servers: my-cluster-kafka-bootstrap.kafka-test.svc:9092
+      schema-registry:
+        url: http://my-schema-registry.kafka-test.svc:8081
+        type: "confluent"

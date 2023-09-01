@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: multi-store-streamer
+  name: multi-store-streamer
+  annotations:
+    app.kubernetes.io/managed-by: tkb
+    app.kubernetes.io/part-of: edms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multi-store-streamer
+  template:
+    metadata:
+      labels:
+        app: multi-store-streamer
+    spec:
+      containers:
+        - name: join-streamer
+          env:
+            - name: "TZ"
+              value: "Europe/Zurich"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "multi-store"
+          image: bohunn/multiple-state-stores:f2f73b6
+          imagePullPolicy: "Always"
+          readinessProbe:
+            failureThreshold: 9
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8090
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8090
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 10
+          ports:
+            - containerPort: 8091
+              name: "http"
+              protocol: "TCP"
+          volumeMounts:
+            - mountPath: /app/config/
+              name: env-multi
+          resources:
+            requests:
+              memory: 1Gi
+              cpu: 500m
+            limits:
+              memory: 2Gi
+      volumes:
+        - name: env-multi
+          configMap:
+            name: multi-store-env

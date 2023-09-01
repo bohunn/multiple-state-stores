@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akhq
+  namespace: kafka-test
+  labels:
+    app: akhq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akhq
+  template:
+    metadata:
+      labels:
+        app: akhq
+    spec:
+      containers:
+        - name: akhq
+          image: tchiotludo/akhq:latest
+          ports:
+            - containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: config-file-dir
+              readOnly: true
+              mountPath: /app/application.yml
+              subPath: application.yml
+      volumes:
+        - name: config-file-dir
+          configMap:
+            name: akhq-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akhq
+  namespace: kafka-test
+  labels:
+    app: akhq
+spec:
+    ports:
+      - name: http
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
+    selector:
+        app: akhq
+    type: ClusterIP
+---
+# Route to AKHQ
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: akhq
+  namespace: kafka-test
+spec:
+  host: akhq.kafka-test.apps.ocp4.example.com
+  port:
+      targetPort: http
+  to:
+      kind: Service
+      name: akhq
+      weight: 100
+  wildcardPolicy: None
