@@ -29,6 +29,9 @@ import com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-actuator'
+    implementation 'org.springframework.boot:spring-boot-actuator-autoconfigure'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation group: 'io.confluent', name: "kafka-streams-avro-serde", version: "7.3.0"
