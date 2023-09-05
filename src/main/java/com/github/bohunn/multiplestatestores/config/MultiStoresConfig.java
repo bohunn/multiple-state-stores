@@ -52,6 +52,12 @@ public class MultiStoresConfig {
     @Value("${spring.kafka.streams.application-id}")
     private String streamerApplicationId;
 
+    @Value("${bp.state.store.name}")
+    private String bpStateStoreName;
+
+    @Value("${person.state.store.name}")
+    private String personStateStoreName;
+
     @Bean
     public SpecificAvroSerde<JoinedBpAddrV2> joinedBpAddrSerde() {
         return new SpecificAvroSerde<>();
@@ -82,6 +88,8 @@ public class MultiStoresConfig {
         properties.put(BP_ADDR_TOPIC, bpAddrInputTopicName);
         properties.put(PERSON_ADDR_TOPIC, personAddrInputTopicName);
         properties.put(OBJECT_UPDATE_EVENT_TOPIC, joinedBpAddrOutputTopicName);
+        properties.put(PERSON_STATE_STORE_NAME, personStateStoreName);
+        properties.put(BP_STATE_STORE_NAME, bpStateStoreName);
         if (securityProtocol.equals("SSL")) {
             properties.put("config.providers", "secrets");
             properties.put("config.providers.secrets.class", "io.strimzi.kafka.KubernetesSecretConfigProvider");

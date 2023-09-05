@@ -35,9 +35,6 @@ import static com.github.bohunn.multiplestatestores.config.Helper.*;
 @Slf4j
 public class MultiStoreJoinProcessor {
 
-    private static final String BP_STATE_STORE_NAME_CONFIG = "bp.state.store.name";
-    private static final String PERSON_STATE_STORE_NAME_CONFIG = "person.state.store.name";
-
     @Autowired
     SpecificAvroSerde<JoinedBpAddrV2> joinedBpAddrSerde;
 
@@ -54,8 +51,8 @@ public class MultiStoreJoinProcessor {
     public KStream<String, BpAddrOrPersonAddrV2> buildTopology(StreamsBuilder streamsBuilder) {
         Properties properties = configuration.asProperties();
     
-         final String PERSON_STORE_NAME = properties.getProperty(BP_STATE_STORE_NAME_CONFIG);
-         final String BP_STORE_NAME = properties.getProperty(PERSON_STATE_STORE_NAME_CONFIG);
+         final String PERSON_STORE_NAME = properties.getProperty(BP_STATE_STORE_NAME);
+         final String BP_STORE_NAME = properties.getProperty(PERSON_STATE_STORE_NAME);
 
         final Map<String, String> serdeConfig = Collections.singletonMap(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, properties.getProperty(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG));
 

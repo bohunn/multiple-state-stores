@@ -14,6 +14,8 @@ public class Helper {
     public static final String PERSON_ADDR_TOPIC = "person-addr-joiner-input-topic";
     public static final String BP_ADDR_TOPIC = "bp-addr-joiner-input-topic";
     public static final String OBJECT_UPDATE_EVENT_TOPIC = "object-update-event-output-topic";
+    public static final String PERSON_STATE_STORE_NAME = "person-state-store";
+    public static final String BP_STATE_STORE_NAME = "bp-state-store";
 
     // helper methods
 
